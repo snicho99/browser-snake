@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snake Leaderboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="leaderboard-layout">
+      <section class="leaderboard-panel panel">
+        <div class="leaderboard-topbar">
+          <div>
+            <div class="eyebrow">Separate Leaderboard View</div>
+            <h1>Grid Rivals</h1>
+            <p id="leaderboardSummary" class="muted">Waiting for players to join.</p>
+          </div>
+          <div class="mode-switcher" id="modeSwitcher"></div>
+        </div>
+
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Player</th>
+              <th>Status</th>
+              <th>Length</th>
+              <th>Fruit</th>
+              <th>Cumulative</th>
+              <th>Deaths</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody"></tbody>
+        </table>
+      </section>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/scripts/leaderboard.js"></script>
+  </body>
+  </html>

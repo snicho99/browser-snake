@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Join Snake Arena</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="controller-shell">
+      <section class="controller-card panel">
+        <div id="banner" class="banner hidden"></div>
+
+        <form id="joinForm">
+          <label class="field-label">
+            Name
+            <input
+              id="nameInput"
+              name="name"
+              maxlength="18"
+              placeholder="Your name"
+              autocomplete="off"
+              required
+              aria-invalid="true"
+            />
+          </label>
+
+          <div class="field-label">
+            Color
+            <div id="colorRow" class="color-row"></div>
+          </div>
+
+          <button id="joinButton" class="primary-button" type="submit" disabled>Join The Arena</button>
+        </form>
+
+        <section id="controllerPanel" class="hidden">
+          <div class="info-grid controller-copy">
+            <div class="info-box">
+              <div class="eyebrow">Player</div>
+              <strong id="playerName">-</strong>
+            </div>
+            <div class="info-box">
+              <div class="eyebrow">Status</div>
+              <strong id="playerStatus">Alive</strong>
+            </div>
+            <div class="info-box">
+              <div class="eyebrow">Fruit</div>
+              <strong id="fruitCount">0</strong>
+            </div>
+            <div class="info-box">
+              <div class="eyebrow">Cumulative</div>
+              <strong id="cumulativeScore">0</strong>
+            </div>
+          </div>
+
+          <div id="deathBanner" class="banner controller-copy hidden"></div>
+
+          <div class="controller-pad controller-pad-absolute">
+            <button class="turn-button turn-up" id="upTurn" type="button">Up</button>
+            <button class="turn-button turn-left" id="leftTurn" type="button">Left</button>
+            <div class="dpad-center" aria-hidden="true"><span id="controllerAvatar">😎</span></div>
+            <button class="turn-button turn-right" id="rightTurn" type="button">Right</button>
+            <button class="turn-button turn-down" id="downTurn" type="button">Down</button>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/scripts/controller.js"></script>
+  </body>
+</html>

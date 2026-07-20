@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snake Arena</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="screen-shell">
+      <div class="arena-layout">
+        <section class="arena-stage panel">
+          <canvas id="arenaCanvas" class="arena-canvas"></canvas>
+        </section>
+
+        <aside class="join-panel panel">
+          <div>
+            <div class="eyebrow">Join From Your Phone</div>
+            <h1>Snake Arena</h1>
+            <p class="muted">Scan the code or visit the URL to grab a snake and dive into the grid.</p>
+          </div>
+
+          <div class="qr-wrap">
+            <img id="qrCode" alt="Join QR code" />
+          </div>
+
+          <div>
+            <div class="eyebrow">Join URL</div>
+            <a id="joinUrl" class="join-url" href="#"></a>
+          </div>
+
+          <div>
+            <div class="eyebrow">Players</div>
+            <div id="playerList" class="player-list muted">No players have joined yet.</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/scripts/arena.js"></script>
+  </body>
+  </html>
