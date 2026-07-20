@@ -28,8 +28,7 @@ const qrDataUrlPromise = QRCode.toDataURL(joinUrl, {
   color: {
     dark: "#f7f3e8",
     light: "#132033"
-  },
-  width: 280
+  }
 });
 
 app.use(express.json());

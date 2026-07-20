@@ -136,7 +136,7 @@ body.controller-active {
 
 .qr-wrap img {
   width: 100%;
-  max-width: 220px;
+  height: auto;
   border-radius: 16px;
 }
 
