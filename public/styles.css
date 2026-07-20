@@ -131,7 +131,7 @@ body.controller-active {
   place-items: center;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 18px;
-  padding: 18px;
+  padding: 0;
 }
 
 .qr-wrap img {

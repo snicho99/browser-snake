@@ -19,8 +19,7 @@ const io = new Server(server);
 
 const port = Number(process.env.PORT || 3100);
 const host = process.env.HOST || "0.0.0.0";
-const lanIp = getLanIp() || "localhost";
-const joinUrl = process.env.JOIN_URL || `http://${lanIp}:${port}`;
+const joinUrl = resolveJoinUrl({ port });
 const scoreboardUrl = `${joinUrl}/leaderboard`;
 const botsEnabled = process.env.ENABLE_AI_PLAYERS === "true" ? true : DEFAULT_BOTS_ENABLED;
 const game = new SnakeGame({ joinUrl, scoreboardUrl, botsEnabled });
@@ -154,4 +153,22 @@ function getLanIp() {
   }
 
   return null;
+}
+
+function resolveJoinUrl({ port }) {
+  if (process.env.JOIN_URL) {
+    return process.env.JOIN_URL;
+  }
+
+  if (isFlyRuntime()) {
+    const flyAppName = process.env.FLY_APP_NAME || "browser-snake";
+    return `https://${flyAppName}.fly.dev`;
+  }
+
+  const lanIp = getLanIp() || "localhost";
+  return `http://${lanIp}:${port}`;
+}
+
+function isFlyRuntime() {
+  return Boolean(process.env.FLY_APP_NAME || process.env.FLY_REGION || process.env.FLY_ALLOC_ID);
 }

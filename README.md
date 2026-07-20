@@ -104,6 +104,11 @@ Environment variables currently supported by the server:
 - `ENABLE_AI_PLAYERS`
   Set to `true` to automatically add bots until there are at least 4 total players.
 
+When `JOIN_URL` is not set:
+
+- local runs use `http://<your-lan-ip>:3100`
+- Fly.io runs use `https://browser-snake.fly.dev` or `https://<FLY_APP_NAME>.fly.dev`
+
 Example:
 
 ```bash
