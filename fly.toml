@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for browser-snake on 2026-07-20T11:18:54Z
+# fly.toml app configuration file generated for browser-snake on 2026-07-21T11:30:50Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -11,9 +11,9 @@ primary_region = 'iad'
 [http_service]
   internal_port = 3100
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = 'off'
   auto_start_machines = true
-  min_machines_running = 0
+  min_machines_running = 1
   processes = ['app']
 
 [[vm]]
